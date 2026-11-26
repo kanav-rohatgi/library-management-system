@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My books · Library Desk</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/vendor/lucide.min.js"></script>
+    <script type="module" src="/js/my-books.js"></script>
+</head>
+<body data-page="my-books">
+    <div class="app" id="app" hidden>
+        <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+        <button class="overlay" id="nav-overlay" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+        <div class="main-area">
+            <header class="topbar" id="topbar"></header>
+            <main class="stack" id="main">
+                <header class="page-heading">
+                    <div><h1>My books</h1><p>Check due dates, view past loans, and see your fines.</p></div>
+                    <div id="page-actions" class="button-group" hidden></div>
+                </header>
+        <section class="panel" aria-labelledby="current-label">
+            <div class="panel-padding"><h2 id="current-label">Currently borrowed</h2></div><div id="my-active"></div>
+        </section>
+        <section class="panel" aria-labelledby="history-label">
+            <div class="panel-padding"><h2 id="history-label">My transaction history</h2></div><div id="my-history"></div>
+        </section>
+        <section class="panel" aria-labelledby="fine-label">
+            <div class="panel-padding"><h2 id="fine-label">My fines</h2></div><div id="my-fines"></div>
+        </section>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>
