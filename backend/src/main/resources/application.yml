@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: library-management-system
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${MYSQL_DATABASE:library}?connectionTimeZone=UTC
+    username: ${MYSQL_USER:library}
+    password: ${MYSQL_PASSWORD:demo-library-password}
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.hbm2ddl.halt_on_error: true
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+library:
+  seed:
+    enabled: ${LIBRARY_SEED_ENABLED:true}
+    admin-password: ${LIBRARY_ADMIN_PASSWORD:DemoAdmin123!}
+    librarian-password: ${LIBRARY_LIBRARIAN_PASSWORD:DemoLibrarian123!}
+    student-password: ${LIBRARY_STUDENT_PASSWORD:DemoStudent123!}
