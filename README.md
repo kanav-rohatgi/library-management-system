@@ -130,6 +130,8 @@ docker compose up --build
 | Build runs out of disk space | Free space in Docker Desktop and rerun the build. The first build downloads the Maven, Java, Nginx, MySQL, and Adminer images. |
 | Login stops working after a backend restart | Sign in again. By default each backend startup creates a fresh JWT signing key. To keep sessions valid across restarts, supply a stable Base64-encoded secret of at least 32 bytes in `LIBRARY_JWT_SECRET`. See [environment examples](.env.example). |
 
+For a local build I/O error or to run published images, see the [container release guide](deploy/README.md).
+
 ## API
 
 Log in through `POST /api/auth/login` and send the returned token as `Authorization: Bearer <token>` on protected requests. Swagger UI accepts the token through **Authorize**. List endpoints with pagination accept zero-based `page`, `size` (up to 100), and `sort=field,direction`.

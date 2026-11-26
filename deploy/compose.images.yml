@@ -1,0 +1,7 @@
+services:
+  backend:
+    image: ${LIBRARY_BACKEND_IMAGE:?Set LIBRARY_BACKEND_IMAGE to the backend release reference}
+    build: !reset null
+  frontend:
+    image: ${LIBRARY_FRONTEND_IMAGE:?Set LIBRARY_FRONTEND_IMAGE to the frontend release reference}
+    build: !reset null
