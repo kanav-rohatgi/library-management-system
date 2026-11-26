@@ -23,8 +23,8 @@
             <div class="panel-header"><h2 id="issue-label">Issue a book</h2></div>
             <form id="issue-form">
                 <div class="form-grid">
-                    <label>Student<select required name="studentId" disabled><option value="">Loading students…</option></select></label>
-                    <label>Book<select required name="bookId" disabled><option value="">Loading books…</option></select></label>
+                    <label><span id="issue-student-label">Student</span><select aria-labelledby="issue-student-label" required name="studentId" disabled><option value="">Loading students…</option></select></label>
+                    <label><span id="issue-book-label">Book</span><select aria-labelledby="issue-book-label" required name="bookId" disabled><option value="">Loading books…</option></select></label>
                 </div>
                 <p id="issue-error" class="error-text" role="alert"></p>
                 <div class="form-footer"><button class="btn" type="submit" disabled><i data-lucide="book-up"></i> <span>Issue book</span></button></div>
