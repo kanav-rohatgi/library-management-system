@@ -64,4 +64,15 @@ public class LibraryUser {
     public Student getStudent() {
         return student;
     }
+
+    public void changePassword(String hash) {
+        passwordHash = hash;
+    }
+
+    public boolean canSignIn() {
+        if (role != Role.STUDENT) {
+            return true;
+        }
+        return student != null && !student.isArchived() && student.getStatus() == StudentStatus.ACTIVE;
+    }
 }

@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import org.hibernate.annotations.Check;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "books", indexes = {
@@ -44,6 +45,10 @@ public class Book {
 
     @Column(nullable = false)
     private int availableCopies;
+
+    @Column(nullable = false)
+    @ColumnDefault("false")
+    private boolean archived;
 
     protected Book() {
     }
@@ -94,5 +99,32 @@ public class Book {
 
     public int getAvailableCopies() {
         return availableCopies;
+    }
+
+    public boolean isArchived() {
+        return archived;
+    }
+
+    public void archive() {
+        archived = true;
+    }
+
+    public void revise(Book details, int checkedOut) {
+        title = details.title;
+        author = details.author;
+        isbn = details.isbn;
+        category = details.category;
+        publisher = details.publisher;
+        publicationYear = details.publicationYear;
+        totalCopies = details.totalCopies;
+        availableCopies = totalCopies - checkedOut;
+    }
+
+    public void issueCopy() {
+        availableCopies--;
+    }
+
+    public void returnCopy() {
+        availableCopies++;
     }
 }

@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.hibernate.annotations.Check;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "students")
@@ -39,6 +40,10 @@ public class Student {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 16)
     private StudentStatus status;
+
+    @Column(nullable = false)
+    @ColumnDefault("false")
+    private boolean archived;
 
     protected Student() {
     }
@@ -84,5 +89,23 @@ public class Student {
 
     public StudentStatus getStatus() {
         return status;
+    }
+
+    public boolean isArchived() {
+        return archived;
+    }
+
+    public void archive() {
+        archived = true;
+    }
+
+    public void revise(Student details) {
+        rollNumber = details.rollNumber;
+        name = details.name;
+        email = details.email;
+        phone = details.phone;
+        department = details.department;
+        academicYear = details.academicYear;
+        status = details.status;
     }
 }

@@ -87,4 +87,9 @@ public class LoanTransaction {
     public BigDecimal getFineAmount() {
         return fineAmount;
     }
+
+    public void complete(LocalDate date, BigDecimal fine) {
+        returnDate = date;
+        fineAmount = fine;
+    }
 }
