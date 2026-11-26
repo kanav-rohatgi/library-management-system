@@ -9,6 +9,7 @@ CREATE TABLE books (
     publication_year INT NOT NULL,
     total_copies INT NOT NULL,
     available_copies INT NOT NULL,
+    archived BOOLEAN NOT NULL DEFAULT FALSE,
     CHECK (total_copies >= 0 AND available_copies BETWEEN 0 AND total_copies),
     INDEX ix_books_title (title),
     INDEX ix_books_author (author),
@@ -24,6 +25,7 @@ CREATE TABLE students (
     department VARCHAR(120) NOT NULL,
     academic_year INT NOT NULL,
     status ENUM('ACTIVE', 'INACTIVE') NOT NULL,
+    archived BOOLEAN NOT NULL DEFAULT FALSE,
     CHECK (academic_year >= 1)
 );
 
