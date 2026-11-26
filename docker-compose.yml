@@ -38,7 +38,7 @@ services:
       - "8080:8080"
     restart: on-failure
     healthcheck:
-      test: ["CMD", "curl", "--noproxy", "*", "--fail", "--silent", "http://localhost:8080/actuator/health"]
+      test: ["CMD", "curl", "--noproxy", "*", "--fail", "--silent", "http://localhost:8080/actuator/health/readiness"]
       interval: 5s
       timeout: 3s
       retries: 20

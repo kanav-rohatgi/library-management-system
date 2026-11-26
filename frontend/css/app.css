@@ -53,7 +53,7 @@ h2 { font-size: 1.17rem; letter-spacing: -.025em; }
 .topbar-left, .profile, .button-group { display: flex; align-items: center; gap: .65rem; }
 .topbar-left { font-size: .9rem; color: var(--muted); }
 .profile { min-width: 0; font-size: .875rem; font-weight: 700; overflow-wrap: anywhere; }
-.profile .small { font-weight: 500; }
+.profile .small { display: block; font-weight: 500; }
 .avatar { flex-shrink: 0; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--lavender); color: var(--primary-dark); }
 .menu-toggle { display: none !important; }
 .overlay { display: none; }
