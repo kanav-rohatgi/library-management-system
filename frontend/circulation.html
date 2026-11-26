@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Issue and return · Library Desk</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/vendor/lucide.min.js"></script>
+    <script type="module" src="/js/circulation.js"></script>
+</head>
+<body data-page="circulation">
+    <div class="app" id="app" hidden>
+        <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+        <button class="overlay" id="nav-overlay" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+        <div class="main-area">
+            <header class="topbar" id="topbar"></header>
+            <main class="stack" id="main">
+                <header class="page-heading">
+                    <div><h1>Issue and return</h1><p>Check books out to students or record a return.</p></div>
+                    <div id="page-actions" class="button-group" hidden></div>
+                </header>
+        <section class="panel panel-padding" aria-labelledby="issue-label">
+            <div class="panel-header"><h2 id="issue-label">Issue a book</h2></div>
+            <form id="issue-form">
+                <div class="form-grid">
+                    <label>Student<select required name="studentId" disabled><option value="">Loading students…</option></select></label>
+                    <label>Book<select required name="bookId" disabled><option value="">Loading books…</option></select></label>
+                </div>
+                <p id="issue-error" class="error-text" role="alert"></p>
+                <div class="form-footer"><button class="btn" type="submit" disabled><i data-lucide="book-up"></i> <span>Issue book</span></button></div>
+            </form>
+        </section>
+        <section class="panel" aria-labelledby="active-label">
+            <div class="panel-padding"><h2 id="active-label">Active loans</h2></div>
+            <div id="loans-table"></div>
+        </section>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>

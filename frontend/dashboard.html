@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard · Library Desk</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/vendor/lucide.min.js"></script>
+    <script defer src="/vendor/chart.umd.min.js"></script>
+    <script type="module" src="/js/dashboard.js"></script>
+</head>
+<body data-page="dashboard">
+    <div class="app" id="app" hidden>
+        <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+        <button class="overlay" id="nav-overlay" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+        <div class="main-area">
+            <header class="topbar" id="topbar"></header>
+            <main class="stack" id="main">
+                <header class="page-heading">
+                    <div><h1>Dashboard</h1><p>Today’s catalogue and circulation activity.</p></div>
+                    <div id="page-actions" class="button-group" hidden></div>
+                </header>
+        <section class="dashboard-hero" aria-labelledby="circulation-title">
+            <div>
+                <h2 id="circulation-title">Manage circulation</h2>
+                <p>Issue a book or check one back in.</p>
+                <a class="btn" href="/circulation.html"><i data-lucide="arrow-left-right"></i> Issue or return</a>
+            </div>
+        </section>
+        <p id="dashboard-status" class="muted" role="status">Loading dashboard…</p>
+        <section class="metrics" id="metrics" aria-label="Library totals" hidden></section>
+        <div class="chart-grid" id="charts" hidden>
+            <section class="panel panel-padding"><h2>Books by category</h2><div class="chart"><canvas id="categories" aria-label="Books by category" role="img"></canvas></div><p class="chart-summary" id="category-summary"></p></section>
+            <section class="panel panel-padding"><h2>Loan status</h2><div class="chart"><canvas id="loan-status" aria-label="Loan status" role="img"></canvas></div><p class="chart-summary" id="loan-summary"></p></section>
+        </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>

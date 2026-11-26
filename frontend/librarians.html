@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Librarians · Library Desk</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/vendor/lucide.min.js"></script>
+    <script type="module" src="/js/librarians.js"></script>
+</head>
+<body data-page="librarians">
+    <div class="app" id="app" hidden>
+        <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+        <button class="overlay" id="nav-overlay" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+        <div class="main-area">
+            <header class="topbar" id="topbar"></header>
+            <main class="stack" id="main">
+                <header class="page-heading">
+                    <div><h1>Librarians</h1><p>Create librarian accounts, reset passwords, and remove access.</p></div>
+                    <div id="page-actions" class="button-group" hidden></div>
+                </header>
+        <section class="panel" aria-label="Librarian accounts"><div id="librarians-table"></div></section>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>

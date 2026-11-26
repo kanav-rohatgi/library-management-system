@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Books · Library Desk</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/vendor/lucide.min.js"></script>
+    <script type="module" src="/js/books.js"></script>
+</head>
+<body data-page="books">
+    <div class="app" id="app" hidden>
+        <aside class="sidebar" id="sidebar" aria-label="Sidebar"></aside>
+        <button class="overlay" id="nav-overlay" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+        <div class="main-area">
+            <header class="topbar" id="topbar"></header>
+            <main class="stack" id="main">
+                <header class="page-heading">
+                    <div><h1>Books</h1><p>Find books and check copy availability.</p></div>
+                    <div id="page-actions" class="button-group" hidden></div>
+                </header>
+        <section class="panel" aria-label="Book catalogue">
+            <form class="filters" id="book-filters">
+                <label class="wide">Search<input name="q" type="search" placeholder="Title, author or ISBN"></label>
+                <label>Category<input name="category" type="search" placeholder="All categories"></label>
+                <label>Availability<select name="available"><option value="">All books</option><option value="true">Available</option><option value="false">Unavailable</option></select></label>
+                <label>Sort by<select name="sort"><option value="title,asc">Title A–Z</option><option value="title,desc">Title Z–A</option><option value="author,asc">Author A–Z</option><option value="publicationYear,desc">Newest first</option><option value="availableCopies,desc">Most available</option></select></label>
+                <button class="btn btn-secondary" type="submit"><i data-lucide="search"></i> Apply</button>
+            </form>
+            <div id="books-table"></div>
+        </section>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>
